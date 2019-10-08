@@ -120,6 +120,16 @@ while not victory:
     victory, col, row, lever_a, coins = play_one_move(col, row, valid_directions, coins)
     if victory:
         print("Victory! Total coins", str(coins) + ".")
+        play_again = input("Play again (y/n): ")
+        if play_again == "y" or play_again == "Y":
+            coins = 0
+            row = 1
+            col = 1
+            victory = False
+            print("You can travel: (N)orth.")
+        else:
+            pass
     else:
         valid_directions = find_directions(col, row)
         print_directions(valid_directions)
+
